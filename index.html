@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rencontre des civilisations — V2 Texte & Quiz</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <h1>Rencontre des civilisations</h1>
+      <p class="subtitle">Aventure historique à choix — V2 (Texte enrichi & Quiz)</p>
+    </div>
+    <nav class="top-actions">
+      <button id="btn-sources" class="link">Sources</button>
+      <button id="btn-glossary" class="link">Glossaire</button>
+      <button id="btn-journal" class="link">Journal</button>
+      <button id="btn-reset" class="link">Recommencer</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="left-col">
+      <div id="art" class="art"></div>
+      <div id="credits" class="credits hidden"></div>
+      <div id="minimap" class="minimap"></div>
+    </section>
+
+    <section class="right-col">
+      <section id="character-select" class="panel">
+        <h2>Choisissez votre parcours</h2>
+        <div class="char-grid">
+          <button class="char-card" data-char="cortes">
+            <h3>Hernán Cortés</h3>
+            <p>Expédition, alliances, Noche Triste, brigantins, siège.</p>
+          </button>
+          <button class="char-card" data-char="moctezuma">
+            <h3>Moctezuma II</h3>
+            <p>Autorité, présages, protocole, Tóxcatl, Noche Triste, siège.</p>
+          </button>
+        </div>
+      </section>
+
+      <section id="hud" class="hud hidden">
+        <div class="chapter">
+          <h2 id="chapter-title"></h2>
+          <span id="turn-count" class="turn"></span>
+        </div>
+        <div id="stats" class="stats"></div>
+      </section>
+
+      <section id="story" class="panel hidden">
+        <div id="narrative" class="narrative"></div>
+        <div id="learn" class="learn hidden"></div>
+        <div id="choices" class="choices"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <div id="teacher-note" class="teacher-note hidden"></div>
+      </section>
+
+      <section id="endings" class="panel hidden"></section>
+
+      <section id="quiz" class="panel hidden">
+        <h3>Questionnaire de compréhension</h3>
+        <form id="quiz-form"></form>
+        <div class="quiz-actions">
+          <button id="btn-submit-quiz" class="link">Corriger</button>
+          <button id="btn-replay" class="link">Rejouer le parcours</button>
+        </div>
+        <div id="quiz-result" class="quiz-result hidden"></div>
+      </section>
+
+      <section id="journal-panel" class="panel hidden">
+        <h3>Journal de campagne</h3>
+        <ol id="journal-list" class="journal"></ol>
+        <div class="journal-actions">
+          <button id="btn-download-journal" class="link">Télécharger (.txt)</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>V2 — Texte enrichi & quiz intégré — © 2026</p>
+  </footer>
+
+  <dialog id="dlg-sources" class="modal">
+    <h3>Sources & lectures</h3>
+    <ul class="sources-list">
+      <li><strong>Codex florentin (Livre 12)</strong> — Édition numérique (Getty Research Institute) : images et folios, voix nahuas et espagnoles.</li>
+      <li><strong>Wikimedia Commons</strong> — Catégories “Florentine Codex” et “Lienzo de Tlaxcala” (images en domaine public).</li>
+      <li>Bernal Díaz del Castillo — <em>Histoire véritable de la conquête de la Nouvelle-Espagne</em>.</li>
+      <li>Hernán Cortés — <em>Lettres de relation</em>.</li>
+      <li>Matthew Restall — <em>Seven Myths of the Spanish Conquest</em>.</li>
+    </ul>
+    <button id="close-sources">Fermer</button>
+  </dialog>
+
+  <dialog id="dlg-glossary" class="modal">
+    <h3>Glossaire</h3>
+    <ul>
+      <li><strong>Brigantins</strong> : navires légers employés sur le lac.</li>
+      <li><strong>Tóxcatl</strong> : fête religieuse mexica (mai-juin) au cœur des tensions en 1520.</li>
+      <li><strong>Calpulli</strong> : communauté de base mexica.</li>
+      <li><strong>Tribut</strong> : ressources versées par les provinces.</li>
+      <li><strong>Tlaxcala</strong> : alliés indigènes majeurs de Cortés.</li>
+    </ul>
+    <button id="close-glossary">Fermer</button>
+  </dialog>
+
+  <script src="assets/game.js"></script>
+</body>
+</html>
